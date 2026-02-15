@@ -1,0 +1,145 @@
+/*** 
+=============================================
+    Fact Counter style1 Css
+=============================================
+***/
+.fact-counter-style1 {
+    position: relative;
+    display: block;
+    padding: 160px 0px 70px;
+    background: #f4f5f9;
+    z-index: 10;
+}
+
+.fact-counter-style1-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: #09494F;
+    background-blend-mode: multiply;
+    z-index: -1;
+}
+
+.fact-counter-style1 .container {
+    max-width: 1440px;
+}
+
+.fact-counter-style1 ul li:nth-child(2) {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.fact-counter-style1 ul li:nth-child(3) {
+    padding-left: 90px;
+}
+
+.single-fact-counter {
+    position: relative;
+    display: block;
+    padding-left: 110px;
+    max-width: 370px;
+    margin-bottom: 65px;
+}
+
+.single-fact-counter .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
+}
+
+.single-fact-counter .icon span {
+    position: relative;
+    display: block;
+    line-height: 0;
+}
+
+.single-fact-counter .icon span::before {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 80px;
+    line-height: 80px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+
+
+.single-fact-counter .outer-box {
+    position: relative;
+    display: block;
+    flex: 1;
+}
+
+.single-fact-counter .count-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-bottom: 29px;
+    color: #ffffff;
+    font-size: 70px;
+    line-height: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: var(--thm-font);
+}
+
+.single-fact-counter .count-box:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    bottom: 0;
+    width: 6px;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.single-fact-counter .count-box:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -21px;
+    right: 0;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.single-fact-counter .count-box span {
+    position: relative;
+    display: block;
+    line-height: 60px;
+}
+
+.single-fact-counter .count-box i {
+    position: relative;
+    display: inline-block;
+    top: 0px;
+    padding-left: 5px;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.single-fact-counter .title {
+    position: relative;
+    display: block;
+    padding-top: 49px;
+}
+
+.single-fact-counter .title h6 {
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-family: var(--thm-font);
+}

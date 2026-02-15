@@ -1,0 +1,428 @@
+/*** 
+=============================================
+    About Style1 Css   
+=============================================
+***/
+.about-style1 {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 0px 0 210px;
+    z-index: 10;
+}
+
+.about-style1__shape1 {
+    position: absolute;
+    left: 6%;
+    bottom: 150px;
+}
+
+.about-style1__img {
+    position: relative;
+    display: block;
+    padding-left: 65px;
+    padding-right: 35px;
+}
+
+.about-style1__img .inner {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.about-style1__img .inner img {
+    width: 100%;
+    transition: background-color 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.about-style1__img:hover .inner img {
+    transform: scale(1.02) rotate(1deg);
+}
+
+
+
+.satisfied-patients-box {
+    position: absolute;
+    display: flex;
+    top: 50px;
+    left: -50px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 30px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 25px 25px 25px;
+    z-index: 3;
+}
+
+.satisfied-patients-box .img-box {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+.satisfied-patients-box .img-box img {
+    width: 100%;
+}
+
+.satisfied-patients-box .counting-box {
+    position: relative;
+    flex: 1;
+    margin-left: 25px;
+}
+
+.satisfied-patients-box .counting-box .counting h2 {
+    color: #0C828C;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+    font-family: var(--thm-font);
+}
+
+.satisfied-patients-box .counting-box .counting span {
+    color: #0C828C;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+    font-family: var(--thm-font);
+}
+
+.satisfied-patients-box .counting-box .counting span.k {
+    position: relative;
+    display: inline-block;
+    line-height: 28px;
+    top: 5px;
+}
+
+.satisfied-patients-box .counting-box p {
+    color: #515151;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 4px 0 0;
+}
+
+.about-style1__img .outer {
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+    width: 305px;
+    height: 305px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 15px 15px 0px;
+    padding-right: 0;
+}
+
+.about-style1__img .outer img {
+    width: 100%;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.about-style1__img:hover .outer img {
+    transform: scale(0.9);
+}
+
+
+
+.about-style1__content {
+    position: relative;
+    display: block;
+    padding-top: 40px;
+    padding-left: 80px;
+}
+
+.about-style1__content .sec-title {
+    padding-bottom: 32px;
+}
+
+.about-style1__content .sec-title .sub-title .big-title {
+    top: 0;
+    right: -100px;
+}
+
+
+.about-style1__content .inner-text {
+    position: relative;
+    display: block;
+}
+
+.about-style1__content .inner-text p {
+    margin: 0;
+}
+
+
+.about-style1__content .inner-text .list-item {
+    position: relative;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.about-style1__content .inner-text .list-item ul {
+    position: relative;
+    display: block;
+}
+
+.about-style1__content .inner-text .list-item ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    min-height: 55px;
+}
+
+.about-style1__content .inner-text .list-item ul li+li {
+    margin-top: 15px;
+}
+
+.about-style1__content .inner-text .list-item ul li .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 55px;
+    background: #F5F5F5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-style1__content .inner-text .list-item ul li .icon span {
+    position: relative;
+    display: inline-block;
+    color: #0C828C;
+    font-size: 30px;
+}
+
+.about-style1__content .inner-text .btns-box {
+    position: relative;
+    display: block;
+    line-height: 0;
+}
+
+
+
+
+/*** 
+=============================================
+    About Style2 Css
+=============================================
+***/
+.about-style2 {
+    position: relative;
+    display: block;
+    background-color: #ffffff;
+    padding: 0px 0 150px;
+    z-index: 10;
+}
+
+.about-style2__shape1 {
+    position: absolute;
+    right: 6%;
+    bottom: 150px;
+    z-index: -1;
+}
+
+.about-style2__img {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-right: 50px;
+}
+
+.about-style2__img .inner {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--thm-base);
+    transition: background-color 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.about-style2__img .inner img {
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.about-style2__img:hover .inner img {
+    opacity: 0.90;
+    transform: scale(1.02) rotate(0deg);
+}
+
+
+.video-gallery-style1--style2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    z-index: 3;
+}
+
+.video-gallery-style1--style2 .icon {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 140px;
+    height: 140px;
+    background: #ffffff;
+    border-radius: 0%;
+    border-radius: 0px 20px 0px 0px;
+}
+
+.video-gallery-style1--style2 .icon .video-popup {
+    width: 110px;
+    height: 110px;
+    background: #0C828C;
+    border-radius: 50%;
+}
+
+.video-gallery-style1--style2 .icon .video-popup span::before {
+    font-size: 35px;
+}
+
+.video-gallery-style1--style2 .icon:after,
+.video-gallery-style1--style2 .icon:before {
+    display: none;
+}
+
+.video-gallery-style1--style2 .icon:hover {
+    background-color: #ffffff;
+}
+
+.video-gallery-style1--style2 .icon .video-popup svg {
+    font-size: 35px;
+    color: #ffffff;
+}
+
+
+.about-style2__content {
+    position: relative;
+    display: block;
+}
+
+.about-style2 .sec-title {
+    padding-bottom: 30px;
+}
+
+.about-style2__content .inner-text {
+    position: relative;
+    display: block;
+}
+
+.about-style2__content .inner-text p {
+    font-weight: 400;
+}
+
+.about-style2__content .list-item {
+    position: relative;
+    display: block;
+    margin-top: 36px;
+}
+
+.about-style2__content .list-item ul {
+    position: relative;
+    display: block;
+}
+
+.about-style2__content .list-item ul li {
+    position: relative;
+    display: block;
+    padding-left: 40px;
+}
+
+.about-style2__content .list-item ul li+li {
+    margin-top: 13px;
+}
+
+.about-style2__content .list-item ul li .icon {
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+.about-style2__content .list-item ul li .icon span {
+    color: #0C828C;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.about-style2__content .list-item ul li .icon svg {
+    color: #0C828C;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+
+.donors-box--style2 {
+    margin-top: 45px;
+}
+
+.donors-box--style2 .img-box {
+    width: 150px;
+    height: 60px;
+}
+
+.donors-box--style2 .img-box ul li {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #ffffff;
+}
+
+.donors-box--style2 .img-box ul li:nth-child(2) {
+    margin-left: -20px;
+}
+
+.donors-box--style2 .img-box ul li:nth-child(3) {
+    margin-left: -20px;
+}
+
+
+.about-style2__content .inner-text .btns-box {
+    position: relative;
+    display: block;
+    line-height: 0;
+    margin-top: 45px;
+}
+
+.about-style2__content .inner-text .btns-box a {
+    border-radius: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** 
+=============================================
+    About Style2 Css   
+=============================================
+***/
