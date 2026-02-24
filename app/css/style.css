@@ -5666,3 +5666,14 @@ select:focus {
     color: #ffffff;
     background-color: #2db7cf;
 }
+
+.login_form {
+    background: #F5F5F5;
+    padding: 50px 40px 50px;
+    border-radius: 10px;
+}
+
+.input_error {
+    color: var(--thm-primary);
+    font-size: 14px;
+}

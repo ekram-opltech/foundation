@@ -1587,10 +1587,10 @@
 }
 
 
-
-
-
-
+.main-menu .main-menu__list li.login_dropdown {
+    position: relative;
+    left: 220px;
+}
 
 
 

@@ -8,8 +8,7 @@ const Contact = () => {
                         <div className="contact-info-box-style1">
                             <div className="title">
                                 <h2>get in touch</h2>
-                                <p>Quis purus elementum quis quis penatibus ultriceu dictumst nam tellus antario eptu
-                                    orciopations maesu larem ouset Fermentum donec.</p>
+                                <p>Interested in volunteering, donating, or partnering with our foundation? We’d love to hear from you. Connect with us today and help us continue bringing hope, support, and positive change to those who need it most.</p>
                             </div>
                             <div className="phone-number">
                                 <h3>Call us for any donations & support us</h3>

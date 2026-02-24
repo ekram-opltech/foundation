@@ -5,6 +5,7 @@ import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free
 import Link from "next/link";
 import MovileNav from "./mobile-nav";
 import { useState } from "react";
+import LoginHeader from "./login-header";
 
 const Header: React.FC = () => {
 
@@ -90,17 +91,12 @@ const Header: React.FC = () => {
                                             <li><Link href="/about">About Us</Link></li>
                                             <li><Link href="/events">Events</Link></li>
                                             <li><Link href="/contact">Contact</Link></li>
+                                            <LoginHeader />
                                         </ul>
                                     </div>
                                 </div>
 
                                 <div className="main-menu-style2-right">
-                                    {/* <div className="side-content-button">
-                                    <a className="navSidebar-button" href="#">
-                                        <span className="line"></span>
-                                        <span className="line two"></span>
-                                    </a>
-                                </div> */}
                                     <div className="header-btn-style2">
                                         <Link className="btn-one" href="/contact">
                                             <span className="txt">
