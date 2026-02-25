@@ -9,7 +9,7 @@ export const Login = async (payload: ILoginUser) => {
 
         const result = await res.json();
         if (result.success) {
-            //window.location.href = "/dashboard/profile";
+            window.location.href = "/dashboard/profile";
         } else {
             alert(result.message);
         }
@@ -28,7 +28,7 @@ export const Logout = async () => {
         const result = await response.json();
 
         if (result.success) {
-            // window.location.href = "/";
+            window.location.href = "/";
         }
         else {
             alert(result.message || "Logout failed. Please try again.");
