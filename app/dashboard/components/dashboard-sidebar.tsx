@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import LogoutButton from "../../components/logout-button";
 import { usePathname } from "next/navigation";
-import { dashboardNavLinks } from "@/app/helper/route";
+import { dashboardNavLinks } from "@/helper/routeLinks";
 
 
 const DashboardSidebar = () => {

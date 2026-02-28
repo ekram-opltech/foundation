@@ -6,7 +6,7 @@ import Link from "next/link";
 import MovileNav from "./mobile-nav";
 import { useEffect, useState } from "react";
 import LoginHeader from "./login-header";
-import { mainNavLinks } from "../helper/route";
+import { mainNavLinks } from "../../helper/routeLinks";
 import { usePathname } from "next/navigation";
 import { GetSiteSetting } from "../services/dashboard-services";
 
