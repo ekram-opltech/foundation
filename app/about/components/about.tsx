@@ -1,6 +1,24 @@
-import Link from "next/link"
+"use client"
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { GetAboutUs } from "@/app/services/dashboard-services";
 
 const About = () => {
+    const [data, setData] = useState<any>(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await GetAboutUs();
+                setData(data);
+                localStorage.setItem("aboutUsData", JSON.stringify(data));
+            } catch (error) {
+                console.error("Failed to fetch about us data:", error);
+            }
+        };
+        fetchData();
+    }, []);
+
     return (
         <section className="about-style1" style={{ paddingTop: "150px" }}>
             <div className="about-style1__shape1">
@@ -11,7 +29,7 @@ const About = () => {
                     <div className="col-md-6">
                         <div className="about-style1__img">
                             <div className="inner">
-                                <img src="/images/about/about-style1-1.jpg" alt="" />
+                                <img src={data?.imageUrl} alt="About Us" />
                             </div>
                         </div>
                     </div>
@@ -19,18 +37,16 @@ const About = () => {
                         <div className="about-style1__content">
                             <div className="sec-title">
                                 <div className="sub-title">
-                                    <h4>Umeed E Hayat Foundation</h4>
-                                    <div className="big-title">about us</div>
+                                    <h4>{data?.subTitle || "No Subtitle Set"}</h4>
+                                    <div className="big-title">{data?.title || "No Title Set"}</div>
                                 </div>
-                                <h2>About us</h2>
+                                <h2>{data?.title || "No Title Set"}</h2>
                             </div>
                             <div className="inner-text">
                                 <p className="mb-2">
-                                    <b>Umeed E Hayat Foundation</b> is a compassionate nonprofit organization dedicated to supporting underprivileged and vulnerable communities. The foundation works with a strong belief that every individual deserves hope, dignity, and a better quality of life. It focuses on providing essential assistance such as food distribution to families facing hunger and financial hardship. Through organized ration drives and meal programs, the foundation ensures that needy households receive basic nutrition.
+                                    {data?.description || "No Description Set"}
                                 </p>
-                                <p className="mb-4">
-                                    In addition to food support, Umeed E Hayat Foundation actively contributes to medical assistance. It helps patients who cannot afford treatment, medicines, or hospital expenses. The organization also participates in health awareness initiatives and emergency relief efforts during times of crisis.
-                                </p>
+
                                 <div className="btns-box">
                                     <Link className="btn-one" href="/donate">
                                         <span className="txt">

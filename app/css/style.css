@@ -5677,3 +5677,59 @@ select:focus {
     color: var(--thm-primary);
     font-size: 14px;
 }
+
+.nav_shadow {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.dashboad_area {
+    padding-top: 100px;
+}
+
+.main-menu__list li a.active {
+    color: var(--thm-base);
+}
+
+.sidebar-categories-box li a.active {
+    color: #ffffff;
+    background: #E04F44;
+}
+
+.login_dropdown .logout_button {
+    color: var(--thm-white);
+}
+
+.sidebar-categories-box .logout_button {
+    color: var(--thm-gray);
+}
+
+.sidebar-categories-box li:hover .logout_button {
+    color: #fff;
+}
+
+.sidebar-cause-post ul li .brand_content .img-box {
+    width: 190px;
+    height: auto;
+}
+
+.sidebar-cause-post ul li .img-box.aboutImg {
+    width: 200px;
+    height: auto;
+}
+
+.sidebar-cause-post ul li .brand_content .title-box {
+    left: 100px;
+}
+
+.edit_btn {
+    background-color: var(--thm-base);
+    color: var(--thm-white);
+    width: 60px;
+    padding: 2px;
+}
+
+.edit_btn:hover {
+    background-color: #117017;
+    color: var(--thm-white);
+
+}

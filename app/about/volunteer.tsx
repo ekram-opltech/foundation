@@ -1,54 +1,26 @@
-
+"use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link'
+import { useEffect, useState } from "react";
+import { GetVolunteers } from "../services/dashboard-services";
 
-const volunteers = [
-    {
-        id: 1,
-        name: "Farzan Khan",
-        role: "CEO & Founder",
-        image: "/images/team/team-v1-1.jpg",
-        fbLink: "https://www.facebook.com/",
-        twitterLink: "https://twitter.com/",
-        instaLink: "https://www.instagram.com/",
-        youtubeLink: "https://www.youtube.com/"
-    },
-    {
-        id: 2,
-        name: "Faisal Khan",
-        role: "Senior Officer",
-        image: "/images/team/team-v1-7.jpg",
-        fbLink: "https://www.facebook.com/",
-        twitterLink: "https://twitter.com/",
-        instaLink: "https://www.instagram.com/",
-        youtubeLink: "https://www.youtube.com/"
-    },
-    {
-        id: 3,
-        name: "Talib Khan",
-        role: "Senior Volunteer",
-        image: "/images/team/team-v1-2.jpg",
-        fbLink: "https://www.facebook.com/",
-        twitterLink: "https://twitter.com/",
-        instaLink: "https://www.instagram.com/",
-        youtubeLink: "https://www.youtube.com/"
-    },
-    {
-        id: 4,
-        name: "Sabih Anwar",
-        role: "Senior Volunteer",
-        image: "/images/team/team-v1-8.jpg",
-        fbLink: "https://www.facebook.com/",
-        twitterLink: "https://twitter.com/",
-        instaLink: "https://www.instagram.com/",
-        youtubeLink: "https://www.youtube.com/"
-    }
-];
 
 const Volunteer = () => {
 
+    const [data, setData] = useState<any[]>([]);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const _data = await GetVolunteers();
+                setData(_data);
+            } catch (error) {
+                alert(error);
+            }
+        };
+        fetchData();
+    }, []);
 
 
     return (
@@ -63,34 +35,34 @@ const Volunteer = () => {
                 </div>
                 <div className="row">
                     {
-                        volunteers.map((item) => {
+                        data.map((item) => {
                             return (
-                                <div className="col-xl-3 col-lg-4 col-md-6" key={item.id}>
+                                <div className="col-xl-3 col-lg-4 col-md-6" key={item._id}>
                                     <div className="single-team-style1 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms">
                                         <div className="img-holder">
                                             <div className="inner">
-                                                <img src={item.image} alt={item.name} />
+                                                <img src={item.imageUrl} alt={item.firstName} />
                                             </div>
                                             <div className="overlay-content">
                                                 <div className="team-social-link">
                                                     <ul className="clearfix">
                                                         <li>
-                                                            <Link href={item.fbLink}>
+                                                            <Link target="_blank" href={item.facebookUrl}>
                                                                 <FontAwesomeIcon icon={faFacebook} />
                                                             </Link>
                                                         </li>
                                                         <li>
-                                                            <Link href={item.twitterLink}>
+                                                            <Link target="_blank" href={item.twitterUrl}>
                                                                 <FontAwesomeIcon icon={faTwitter} />
                                                             </Link>
                                                         </li>
                                                         <li>
-                                                            <Link href={item.instaLink}>
+                                                            <Link target="_blank" href={item.instaUrl}>
                                                                 <FontAwesomeIcon icon={faInstagram} />
                                                             </Link>
                                                         </li>
                                                         <li>
-                                                            <Link href={item.youtubeLink}>
+                                                            <Link target="_blank" href={item.youtubeUrl}>
                                                                 <FontAwesomeIcon icon={faYoutube} />
                                                             </Link>
                                                         </li>
@@ -99,8 +71,8 @@ const Volunteer = () => {
                                             </div>
                                         </div>
                                         <div className="title-box text-center">
-                                            <h3>{item.name}</h3>
-                                            <h5>{item.role}</h5>
+                                            <h3>{item.firstName} {item.lastName}</h3>
+                                            <h5>{item.post}</h5>
                                         </div>
                                     </div>
                                 </div>

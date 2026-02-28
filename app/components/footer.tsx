@@ -1,8 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { useEffect, useState } from "react";
+import { GetSiteSetting } from "../services/dashboard-services";
 
 const Footer = () => {
+
+    const [siteSetting, setSiteSetting] = useState<any>(null);
+
+    useEffect(() => {
+        const fetchSiteSetting = async () => {
+            try {
+                const data = await GetSiteSetting();
+                setSiteSetting(data);
+            } catch (error) {
+                console.error("Failed to fetch site setting:", error);
+            }
+        };
+        fetchSiteSetting();
+    }, []);
+
     return (
         <footer className="footer-area">
             <div className="footer-area__shape1 wow slideInRight" data-wow-delay="0ms" data-wow-duration="3500ms">
@@ -24,16 +43,16 @@ const Footer = () => {
                                     <h3>contact us</h3>
                                 </div>
                                 <div className="footer-widget-contact-info">
-                                    <p>AT + Post - Hat Chowk Sitanabad ,<br /> Saharsa Bihar</p>
+                                    <p>{siteSetting?.address}</p>
                                     <div className="phone-number">
                                         <p>Donations By Call</p>
                                         <h3>
                                             <span className="icon-phone1"></span>
-                                            <a href="tel:8986992260">+91 8986992260</a>
+                                            <a href={`tel:${siteSetting?.contactPhone}`}>+91 {siteSetting?.contactPhone}</a>
                                         </h3>
                                     </div>
                                     <div className="mail-us">
-                                        <a href="mailto:umeedehayatfoundation@gmail.com">umeedehayatfoundation@gmail.com</a>
+                                        <a href={`mailto:${siteSetting?.contactEmail}`}>{siteSetting?.contactEmail}</a>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +103,7 @@ const Footer = () => {
                         <div className="copyright-text">
                             <p>
                                 &copy; {new Date().getFullYear()}
-                                <Link href="/" className="ms-3">Umeed-E-Hayat Foundation.</Link> All Rights Reserved.
+                                <Link href="/" className="ms-3">{siteSetting?.brandName}.</Link> All Rights Reserved. Designed By <a href="https://www.linkedin.com/in/ekram-khan-406a21233/" target="_blank" className="ms-1">Ekram khan</a>
                             </p>
                         </div>
                         <div className="footer-bottom-right">

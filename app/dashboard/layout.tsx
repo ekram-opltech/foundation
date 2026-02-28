@@ -1,12 +1,9 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import LogoutButton from "../components/logout-button";
+import DashboardSidebar from "./components/dashboard-sidebar";
 
 export default function DashboardLayout({ children, }: { children: React.ReactNode; }) {
 
     return (
-        <section className="cause-details">
+        <section className="cause-details dashboad_area">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-4">
@@ -15,12 +12,7 @@ export default function DashboardLayout({ children, }: { children: React.ReactNo
                                 <div className="sidebar-title">
                                     <h3>Dashboard</h3>
                                 </div>
-                                <ul className="sidebar-categories-box">
-                                    <li><Link href="/dashboard/profile">My Profile<FontAwesomeIcon icon={faAngleRight} /></Link></li>
-                                    <li>
-                                        <a href="#"> <LogoutButton /> <FontAwesomeIcon icon={faAngleRight} /></a>
-                                    </li>
-                                </ul>
+                                <DashboardSidebar />
                             </div>
                         </div>
                     </div>

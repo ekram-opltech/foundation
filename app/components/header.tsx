@@ -4,16 +4,35 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Link from "next/link";
 import MovileNav from "./mobile-nav";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginHeader from "./login-header";
+import { mainNavLinks } from "../helper/route";
+import { usePathname } from "next/navigation";
+import { GetSiteSetting } from "../services/dashboard-services";
 
 const Header: React.FC = () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const pathname = usePathname();
+    const [siteSetting, setSiteSetting] = useState<any>(null);
+
+    useEffect(() => {
+        const fetchSiteSetting = async () => {
+            try {
+                const data = await GetSiteSetting();
+                setSiteSetting(data);
+            } catch (error) {
+                console.error("Failed to fetch site setting:", error);
+            }
+        };
+        fetchSiteSetting();
+    }, []);
 
     const handleOpen = () => {
         setIsOpen(true);
     }
+
+    const isActive = (path: string) => pathname === path;
 
     return (
         <>
@@ -21,7 +40,6 @@ const Header: React.FC = () => {
                 <div className="main-header-style2__top">
                     <div className="container">
                         <div className="inner-content">
-
                             <div className="main-header-style2__top-left">
                                 <div className="header-social-link-style2">
                                     <div className="inner-title">
@@ -56,11 +74,11 @@ const Header: React.FC = () => {
                                     <ul>
                                         <li>
                                             Call us:
-                                            <Link href="tel:8986992260">+91 8986992260</Link>
+                                            <Link href={`tel:${siteSetting?.contactPhone}`}>+91 {siteSetting?.contactPhone}</Link>
                                         </li>
                                         <li>
                                             Email us:
-                                            <Link href="mailto:umeedehayatfoundation@gmail.com">umeedehayatfoundation@gmail.com</Link>
+                                            <Link href={`mailto:${siteSetting?.contactEmail}`}>{siteSetting?.contactEmail}</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -68,15 +86,14 @@ const Header: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <nav className="main-menu main-menu-style2">
+                <nav className="main-menu main-menu-style2 nav_shadow">
                     <div className="main-menu__wrapper clearfix">
                         <div className="container">
                             <div className="main-menu__wrapper-inner">
-
                                 <div className="main-menu-style2-left">
                                     <div className="logo-box-style1">
                                         <Link href="/">
-                                            <img src="/images/brand/f-logo.png" alt="Awesome Logo" title="" />
+                                            <img src={siteSetting?.brandLogo} alt="Awesome Logo" title="" />
                                         </Link>
                                     </div>
                                 </div>
@@ -87,10 +104,16 @@ const Header: React.FC = () => {
                                             <FontAwesomeIcon icon={faBars} />
                                         </a>
                                         <ul className="main-menu__list">
-                                            <li> <Link href="/">Home</Link></li>
-                                            <li><Link href="/about">About Us</Link></li>
-                                            <li><Link href="/events">Events</Link></li>
-                                            <li><Link href="/contact">Contact</Link></li>
+                                            {mainNavLinks.map((link) => (
+                                                <li key={link.href}>
+                                                    <Link
+                                                        href={link.href}
+                                                        className={isActive(link.href) ? "active" : ""}
+                                                    >
+                                                        {link.label}
+                                                    </Link>
+                                                </li>
+                                            ))}
                                             <LoginHeader />
                                         </ul>
                                     </div>

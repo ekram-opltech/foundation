@@ -40,11 +40,11 @@ export const metadata: Metadata = {
   description: "Umeed-E-Hayat Foundation",
 };
 
-export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+export default async function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
 
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body>
         <WowProvider>
           <div className="page-wrapper boxed_wrapper">
             <BootstrapClient />
