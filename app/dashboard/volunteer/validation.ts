@@ -9,7 +9,7 @@ export const VolunteerSchema = z.object({
     twitterUrl: z.string().optional(),
     instaUrl: z.string().optional(),
     youtubeUrl: z.string().optional(),
-    imageFile: z.any().refine((files) => files?.length === 1, "Image is required")
+    imageFile: z.any().refine((files) => files?.length === 1, "Image is required size must be 300 * 300 pixels")
         .refine((files) => files?.[0]?.size <= 2 * 1024 * 1024, "Max file size is 2MB")
         .refine((files) =>
             ["image/jpeg", "image/png", "image/webp"].includes(files?.[0]?.type),

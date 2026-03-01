@@ -176,6 +176,7 @@ const EditVolunteer = () => {
                                             width={200}
                                         />
                                     )}
+                                    <p className="input_error">if you want to change image please use size 300 * 300 pixels</p>
                                 </div>
                                 <div className="col-md-12 mt-4" >
                                     <div className="form-group" >

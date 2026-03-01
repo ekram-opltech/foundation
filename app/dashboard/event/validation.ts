@@ -4,7 +4,7 @@ import { z } from "zod";
 export const EventSchema = z.object({
     title: z.string().min(2, "title must be at least 3 characters"),
     location: z.string().min(3, "location must be at least 1 character"),
-    imageFile: z.any().refine((files) => files?.length === 1, "Image is required")
+    imageFile: z.any().refine((files) => files?.length === 1, "Image is required image size must be 600 * 370 pixels")
         .refine((files) => files?.[0]?.size <= 2 * 1024 * 1024, "Max file size is 2MB")
         .refine((files) =>
             ["image/jpeg", "image/png", "image/webp"].includes(files?.[0]?.type),
