@@ -167,7 +167,7 @@ const EditEvent = () => {
                                         <div className="input-box" >
                                             <button className="btn-one" type="submit" >
                                                 <span className="txt" >
-                                                    {isSubmitting ? "Adding..." : "Add Event"}
+                                                    {isSubmitting ? "Updating..." : "Update Event"}
                                                 </span>
                                             </button>
                                         </div>

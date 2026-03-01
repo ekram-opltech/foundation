@@ -99,3 +99,30 @@ export async function PUT(req: Request, context: { params: Promise<{ id: string 
         return NextResponse.json(response, { status: 500 });
     }
 }
+
+export async function DELETE(req: Request, context: { params: Promise<{ id: string }> }) {
+    const response: IApiResponse = { success: false, message: "", data: null };
+
+    try {
+        await connectDB();
+
+        const { id } = await context.params;
+
+        const data = await Event.findByIdAndDelete(id);
+
+        if (!data) {
+            response.success = false;
+            response.message = "Event not found";
+            return NextResponse.json(response, { status: 404 });
+        }
+
+        response.success = true;
+        response.message = "Event deleted successfully";
+        return NextResponse.json(response, { status: 200 });
+
+    } catch (error) {
+        response.success = false;
+        response.message = error instanceof Error ? error.message : "Internal server error";
+        return NextResponse.json(response, { status: 500 });
+    }
+}
